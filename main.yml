@@ -1,0 +1,13 @@
+name: 'Install Flutter'
+description: 'Installs Flutter(https://flutter.dev)'
+inputs:
+  branch:
+    description: 'The branch/version of Flutter to be used. E.g. stable/v1.0.0'
+    required: false
+    default: 'stable'
+runs:
+  using: "composite"
+  steps: 
+    - run: git clone https://github.com/flutter/flutter.git --depth 1 -b ${{ inputs.branch }} _flutter
+    - run: echo "$GITHUB_WORKSPACE/_flutter/bin" >> $GITHUB_PATH
+    - run: flutter doctor -v
