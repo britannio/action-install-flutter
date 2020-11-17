@@ -9,5 +9,8 @@ runs:
   using: "composite"
   steps: 
     - run: git clone https://github.com/flutter/flutter.git --depth 1 -b ${{ inputs.branch }} _flutter
+      shell: bash
     - run: echo "$GITHUB_WORKSPACE/_flutter/bin" >> $GITHUB_PATH
+      shell: bash
     - run: flutter doctor -v
+      shell: bash
