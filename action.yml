@@ -14,3 +14,7 @@ runs:
       shell: bash
     - run: flutter doctor -v
       shell: bash
+branding:
+  icon: 'smartphone'  
+  color: 'purple'
+
