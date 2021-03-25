@@ -2,7 +2,7 @@ name: 'Install Flutter'
 description: 'Installs Flutter(https://flutter.dev)'
 inputs:
   version:
-    description: 'The branch/version of Flutter to be used. E.g. beta or 1.22.0'
+    description: 'The channel/version of Flutter to be used e.g., beta or 2.0.0'
     required: false
     default: 'stable'
 runs:
