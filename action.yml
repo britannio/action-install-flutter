@@ -1,4 +1,5 @@
 name: 'Install Flutter'
+author: Britannio Jarrett
 description: 'Installs Flutter(https://flutter.dev)'
 inputs:
   version:
