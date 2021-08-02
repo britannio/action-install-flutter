@@ -1,0 +1,19 @@
+name: Flutter Workflow
+on:
+  pull_request:
+  push:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        flutter_version: [stable, master, "2.2.3"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Flutter
+        uses: ./
+        with:
+          version:  ${{ matrix.flutter_version }}
+      - run: flutter --version

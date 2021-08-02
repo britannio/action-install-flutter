@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Installing Flutter
-        uses: britannio/action-install-flutter@v1.0
+        uses: britannio/action-install-flutter@v1.1
         with:
           version: $FLUTTER_VERSION
       - name: Installing dependencies
