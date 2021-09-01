@@ -8,7 +8,7 @@ Flutter commands like `flutter test`.
 ## `version`
 
 By default, the `stable` channel is installed however any Flutter branch or 
-version tag will work e.g., `2.2.3`, `master`, `beta`, `dev`.
+version tag can be set e.g., `2.2.3`, `master`, `beta`, `dev`.
 
 We recommend using a fixed version rather than a channel as it allows you to 
 checkout an old commit and run an action with the version of Flutter used at the
