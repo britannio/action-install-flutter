@@ -1,22 +1,25 @@
 # action-install-flutter
 
-Installs [Flutter](https://flutter.dev)
+This action installs [Flutter](https://flutter.dev) so your workflow can run 
+Flutter commands like `flutter test`.
 
+# Inputs
 
-## Versioning
+## `version`
 
-If no version is specified then the stable channel is used.
+By default, the `stable` channel is installed however any Flutter branch or 
+version tag will work e.g., `2.2.3`, `master`, `beta`, `dev`.
 
-You can either select one of the flutter channels: `master`, `dev`, `beta`, `stable` or you can select specific version like `1.22.6`.
+We recommend using a fixed version rather than a channel as it allows you to 
+checkout an old commit and run an action with the version of Flutter used at the
+time of the commit.
 
-
-
-## Example
+# Example
 
 ```yaml
 name: Flutter Workflow
 env:
-  FLUTTER_VERSION: "stable"
+  FLUTTER_VERSION: "2.2.3"
 on: push
 jobs:
   test:
@@ -24,12 +27,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Installing Flutter
-        uses: britannio/action-install-flutter@v1.1
+      - name: Install Flutter
+        uses: britannio/action-install-flutter@v1
         with:
           version: $FLUTTER_VERSION
-      - name: Installing dependencies
+      - name: Get Packages
         run: flutter pub get
-      - name: Running tests
+      - name: Run Tests
         run: flutter test --no-pub
 ```
