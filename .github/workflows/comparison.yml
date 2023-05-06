@@ -15,7 +15,7 @@ jobs:
       - name: Install Flutter
         uses: britannio/action-install-flutter@v1
         with:
-          flutter-version: stable
+          version: stable
       - run: flutter --version
   comparison-subosito-flutter-action:
     runs-on: ${{ matrix.os }}
